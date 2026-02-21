@@ -56,9 +56,14 @@ endif
 
 nrm:
 	RecompModTool.exe mod.toml build
-	copy /Y $(BUILD_DIR)\\wommy_chaos.nrm "runtime\mods\"
+	copy /Y $(BUILD_DIR)\\wommy_offensive.nrm "runtime\mods\"
 
 run:
-	cd runtime && B:\Programs\Zelda64Recompiled-v1.2.0-Windows\debug-build\Zelda64Recompiled.exe --showConsole
+	cd runtime && B:\Programs\Zelda64Recompiled-v1.2.0-Windows\Zelda64Recompiled.exe --showConsole
 
-play: all nrm run	
+play: all nrm run
+
+translate:
+	cd translator && cmd /C "deno run --allow-read --allow-write --allow-env --allow-net main.ts"
+
+tr: translate

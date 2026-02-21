@@ -17,3 +17,6 @@ runtime/mods
 runtime/*.json
 runtime/*.json.bak
 runtime/mm.n64.us.1.0.z64
+translator/instructions*.txt
+translator/checkpoint_data.c
+src/poorly_translated.c
